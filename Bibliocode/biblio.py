@@ -7,7 +7,7 @@ __version__ = '0.1'
 """
 Archivo inicial para BiblioCode.
 
-Equivale al EXE
+Equivale al EXE - 02
 
 """
 import wx
