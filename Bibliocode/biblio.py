@@ -2,48 +2,29 @@
 # -*- coding: utf-8 -*-#
 
 __author__ = 'Mario Lacunza <mlacunza@gmail.com>'
-__version__ = '0.9.1'
+__version__ = '0.1'
 
 """
-Archivo inicial para Velantur.
+Archivo inicial para BiblioCode.
 
 Equivale al EXE
 
 """
 import wx
-import db.sq
+#import tools.errores
 
-import tools.errores
-
-class pyMeGestor(wx.App):
+class biblio(wx.App):
 
     def OnInit(self):
-        self.oDB = db.sq.cSqlite()
-        self.oError = tools.errores.Error()
-        
+
         self.Inicio()
         return True
 
     def Inicio(self):
-        #Prueba datos
-        test = self.oDB.testConn()
-        #TODO: Mejorar esta verificacion
-        if (test==None):
-            #Ingrese Coneccion    
-            import frm.frmBD as fBD
-            bd = fBD.clsBD(None)
-            bd.Show()
-        else:
-            #Carga Coneccion a la BD Principal
-            self.oDB.CargaConn()
-            #TODO: aqui deberia redirigir al Login
-            import frm.frmMain as fMain  # @UnresolvedImport
-            m = fMain.clsMain(None)
-            m.Show()
-
+        pass
         
 def main():
-    application = pyMeGestor()
+    application = biblio()
     application.MainLoop()
 
 if __name__ == '__main__':
